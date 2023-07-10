@@ -203,18 +203,18 @@ int main()
             {
 
                 std::cout << std::endl << "xCol: " << xCol << " yCol: " << yCol << std::endl;
-                std::cout << circleHitBoxXL << ":X L circle R X:" << circleHitBoxXR << std::endl;
-                std::cout << axeHitBoxXL << ":X L axe R X:" << axeHitBoxXR << std::endl;
-                std::cout << circleHitBoxYU << ":Y U circle D Y:" << circleHitBoxYD << std::endl;
-                std::cout << axeHitBoxYU << ":Y U axe D Y:" << axeHitBoxYD << std::endl << std::endl;
+                std::cout << circleHitBoxXL << " :X L circle R X: " << circleHitBoxXR << std::endl;
+                std::cout << axeHitBoxXL << " :X L axe R X: " << axeHitBoxXR << std::endl;
+                std::cout << circleHitBoxYU << " :Y U circle D Y: " << circleHitBoxYD << std::endl;
+                std::cout << axeHitBoxYU << " :Y U axe D Y: " << axeHitBoxYD << std::endl << std::endl;
                 std::cout << "You got hit" << std::endl;
                 std::cout << "You lasted: " << timer / 60 << " seconds" << std::endl;
             }
         }
 
-//        std::cout << "timer:" << timer << std::endl;
-//        std::cout << "axeMovementX:" << axeMovementX << std::endl;
-//        std::cout << "axeMovementY:" << axeMovementY << std::endl;
+//        std::cout << "timer: " << timer << std::endl;
+//        std::cout << "axeMovementX: " << axeMovementX << std::endl;
+//        std::cout << "axeMovementY: " << axeMovementY << std::endl;
         EndDrawing();
 
     }
