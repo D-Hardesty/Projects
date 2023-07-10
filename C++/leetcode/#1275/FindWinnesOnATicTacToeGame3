@@ -1,0 +1,42 @@
+class Solution {
+public:
+    string tictactoe(vector<vector<int>>& moves) {
+        vector<int> xaxis(3,0);
+        vector<int> yaxis(3,0);
+        int diagonal=0;
+        int antidiagonal=0;
+        for(int i=0;i<moves.size();i++)
+        {
+            int x=moves[i][0];
+            int y=moves[i][1];
+
+            if(i%2==0)
+            {
+                xaxis[x]++;
+                yaxis[y]++;
+                if(x==y)
+                diagonal++;
+                if(x==2-y)
+                antidiagonal++;
+            }
+            else
+            {
+                xaxis[x]--;
+                yaxis[y]--;
+                if(x==y)
+                diagonal--;
+                if(x==2-y)
+                antidiagonal--;
+            }
+            if(xaxis[x]==3 || yaxis[y]==3 || diagonal==3 || antidiagonal==3)
+            return "A";
+            if(xaxis[x]==-3 || yaxis[y]==-3 || diagonal==-3 || antidiagonal==-3)
+            return "B";
+            
+        }
+        if(moves.size()==9)
+        return "Draw";
+        return "Pending";
+    
+    }
+};
