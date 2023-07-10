@@ -64,7 +64,7 @@ int main()
             DrawCircle(circleX, circleY, radius, RED);
 
             // move right
-            if (IsKeyDown(KEY_S))
+            if (IsKeyDown(KEY_D))
             {
                 circleX += circleMovement;
             }
@@ -79,7 +79,7 @@ int main()
                 circleY -= circleMovement;
             }
             // move down
-            if (IsKeyDown(KEY_R))
+            if (IsKeyDown(KEY_S))
             {
                 circleY += circleMovement;
             }
