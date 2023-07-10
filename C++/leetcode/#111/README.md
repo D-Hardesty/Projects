@@ -4,7 +4,8 @@ By going row by row, the first time no children are found for a node the depth i
 both the left and right sides of the tree would need to be checked to guarantee the minimum depth has been found. 
 
 # Approach
-BFS (Breadth-First Search).
+BFS (Breadth-First Search): A row by row search allows us to exit early if the end condition is found.
+Queue: By using a queue we can guarantee that every node is checked in order.
 
 # Complexity
 
