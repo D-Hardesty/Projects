@@ -1,17 +1,47 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+
+# Code
+```
 class Solution {
 public:
     long long minCost(vector<int>& nums, vector<int>& cost) {
-        long long lowCost = numeric_limits<long long>::max();
-        unordered_map<int, int> frequency;
-        for (int num : nums) frequency[num]++;
+        vector<pair<int, int>> vec; 
+        int size = nums.size();
+        long long res = 0;
+        long long sum = 0;
+        long long median;
+        long long total = 0;
         
-        for (const auto& num : frequency) {
-            long long curCost = 0;
-            for (int i = 0; i < nums.size(); ++i) {
-                curCost += abs(1ll * (nums[i] - num.first) * cost[i]);
-            }
-            lowCost = min(lowCost, curCost * num.second);
+        for (int i = 0; i < size; ++i) {
+            vec.push_back({nums[i], cost[i]});
         }
-        return lowCost;
+        sort(vec.begin(), vec.end());
+
+        for (int i = 0; i < size; ++i) 
+            sum += vec[i].second;
+
+        int i = 0;
+        while (total < (sum + 1) / 2 && i < size) {
+            total += 1ll*vec[i].second;
+            median = vec[i].first;
+            ++i;
+        }
+
+        for (int i = 0; i < size; ++i) 
+            res += abs(1ll * nums[i] - median) * (1ll*cost[i]);
+        return res;
     }
 };
+```
