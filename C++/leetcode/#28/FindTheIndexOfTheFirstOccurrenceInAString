@@ -1,0 +1,39 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+# Code
+```
+
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        int haySize = haystack.size();
+        if (haySize == 0 && haystack[0] == needle[0]) return 0;
+        
+        int size = needle.size();
+        int k = 0;
+
+        for (int i = 0; i < haySize; ++i) {
+            if (haystack[i] == needle[0]) {
+                k = 0;
+                for (int j = i; j < haySize; ++j) {
+                    if (haystack[j] != needle[k]) break;
+                    if (haystack[j] == needle[k] && k == size - 1) return i;
+                    ++k;
+                }
+            }
+        }
+        return -1;        
+    }
+};
+```
