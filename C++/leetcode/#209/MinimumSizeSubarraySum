@@ -1,0 +1,37 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+# Code
+```
+
+class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int l = 0;
+        int r = 0;
+        int sum = 0;
+        int res = INT_MAX;
+
+        while (r < nums.size()) {
+            sum += nums[r];
+            while (sum >= target) {
+                res = min(r - l + 1, res);
+                sum -= nums[l];
+                l++;
+            }
+            r++;
+        }
+        return (res == INT_MAX) ? 0 : res;
+    }
+};
+```
