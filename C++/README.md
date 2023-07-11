@@ -1,1 +1,1 @@
-Small c++ projects here.
+Small C++ projects and leetcode problems.
