@@ -94,8 +94,8 @@ window.title("Password Manager")
 window.config(pady=50, padx=50)
 
 canvas = Canvas(width=200, height=200)
-padlock = PhotoImage(file="logo.png")
-canvas.create_image(100, 100, image=padlock)
+# padlock = PhotoImage(file="logo.png")
+# canvas.create_image(100, 100, image=padlock)
 canvas.grid(column=1, row=0)
 
 # region buttons
