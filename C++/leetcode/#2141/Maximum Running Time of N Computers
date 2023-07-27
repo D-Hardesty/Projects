@@ -1,0 +1,15 @@
+long long maxRunTime(int n, vector<int>& batteries) {
+    long long low = 1;
+    long long high = accumulate(batteries.begin(), batteries.end(), 0LL) / n;
+    while(low < high) {
+        long long mid = low + (high - low + 1) / 2;
+        long long time = 0;
+        for(int val : batteries){
+            time += min((long long)val, mid);
+        }
+
+        if(mid * n <= time) low = mid;
+        else high = mid - 1;
+    }
+    return low;
+}
