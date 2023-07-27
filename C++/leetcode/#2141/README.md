@@ -10,7 +10,7 @@ Return the maximum number of minutes you can run all the n computers simultaneou
 
 ## Binary Search
 
-### Complexity
+## Complexity
 
 - Time Complexity O(N log K) || where K = maximum value among elements in batteries
 
