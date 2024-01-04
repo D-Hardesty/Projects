@@ -1,2 +1,2 @@
-# PortfolioProjects
+# Projects
 various projects
